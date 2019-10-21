@@ -36,15 +36,15 @@ import Foundation
 // An affiliated keyword can appear more than once if KEY is either “CAPTION” or “HEADER” or if its pattern is “#+ATTR_BACKEND: VALUE”.
 // “CAPTION”, “AUTHOR”, “DATE” and “TITLE” keywords can contain objects in their value and their optional value, if applicable.
 
-public final class ORGKeyword: ORGElement {
-    public var originalString: String
-    public static var regex: String = ###"#\+{1}((?:\w)+(?:\[\w+\])?)?: (.*)+"###
-    public var description: String { return "KEYWORD: \(self.key ?? "Empty") : \(self.value ?? "Empty")" }
+final class ORGKeyword: ORGElement {
+    var originalString: String
+    static var regex: String = ###"#\+{1}((?:\w)+(?:\[\w+\])?)?: (.*)+"###
+    var description: String { return "KEYWORD: \(self.key ?? "Empty") : \(self.value ?? "Empty")" }
 
-    public var key: String?
-    public var value: String?
+    var key: String?
+    var value: String?
 
-    public init(string: String) {
+    init(string: String) {
         self.originalString = string
         self.parse()
     }

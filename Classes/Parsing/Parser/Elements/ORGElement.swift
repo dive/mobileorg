@@ -28,7 +28,7 @@ enum ORGElementType {
     case unknown
 }
 
-public protocol ORGElement: CustomStringConvertible {
+protocol ORGElement: CustomStringConvertible {
     var originalString: String { get }
     var originalStringRange: NSRange { get }
     var regularExpression: NSRegularExpression { get }
@@ -38,7 +38,7 @@ public protocol ORGElement: CustomStringConvertible {
 }
 
 // Default implementation for common logic
-public extension ORGElement {
+extension ORGElement {
     // FIXME: computed properties are expensive
     var regularExpression: NSRegularExpression {
         do { return try NSRegularExpression(pattern: Self.regex, options: []) }

@@ -22,14 +22,14 @@
 
 import Foundation
 
-public class ORGHeadline: ORGElement {
+class ORGHeadline: ORGElement {
     // STARS KEYWORD PRIORITY TITLE TAGS
     // 1 : Stars - required
     // 2 : Keyword - optional
     // 3 : Priority - optional
     // 4 : Title - optional (?)
     // 5 : Tags - optional (Not part of the regex, handle separately)
-    public static let regex: String = ###"(\*+){1} *(\b[A-Z]+\b)? *(\[\#.+\])? *(.*)? *(\:.*\:)?"###
+    static let regex: String = ###"(\*+){1} *(\b[A-Z]+\b)? *(\[\#.+\])? *(.*)? *(\:.*\:)?"###
     enum Groups: Int {
         case stars = 1
         case keyword
@@ -38,19 +38,19 @@ public class ORGHeadline: ORGElement {
 //        case tags
     }
 
-    public var description: String {
+    var description: String {
         return "HEADING: \([self.stars, self.keyword, self.priority, self.title, self.tags?.description].compactMap { $0 }.joined(separator: "|"))"
     }
 
-    public var stars: String?
-    public var keyword: String?
-    public var priority: String?
-    public var title: String?
-    public var tags: ORGTags?
+    var stars: String?
+    var keyword: String?
+    var priority: String?
+    var title: String?
+    var tags: ORGTags?
 
-    public let originalString: String
+    let originalString: String
 
-    public init(string: String) {
+    init(string: String) {
         self.originalString = string
         self.parse()
     }

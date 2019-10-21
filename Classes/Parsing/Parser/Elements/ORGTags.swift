@@ -22,16 +22,16 @@
 
 import Foundation
 
-public class ORGTags: ORGElement {
-    public let originalString: String
-    public static var regex: String = ###"(:([@\w\.]+:)+)$"###
-    public var description: String { return "TAGS: \(tags?.joined(separator: "|") ?? "no tags")" }
+class ORGTags: ORGElement {
+    let originalString: String
+    static var regex: String = ###"(:([@\w\.]+:)+)$"###
+    var description: String { return "TAGS: \(tags?.joined(separator: "|") ?? "no tags")" }
 
-    public private(set) var tagsRange: Range<String.Index>?
+    private(set) var tagsRange: Range<String.Index>?
 
     var tags: [String]?
 
-    public init(string: String) {
+    init(string: String) {
         self.originalString = string
         self.parse()
     }
