@@ -26,6 +26,7 @@
 		5454325C235E5B0300A46A84 /* ORGTags.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5454325B235E5B0300A46A84 /* ORGTags.swift */; };
 		5454325E235E5B3300A46A84 /* ORGDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5454325D235E5B3300A46A84 /* ORGDocument.swift */; };
 		54543260235E5B5600A46A84 /* String+ORGParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5454325F235E5B5600A46A84 /* String+ORGParser.swift */; };
+		54543263235E5CD800A46A84 /* ORGKeywordTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54543262235E5CD800A46A84 /* ORGKeywordTests.swift */; };
 		54CD6301234BC02D00D485E1 /* UIColor+MobileOrg.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54CD6300234BC02D00D485E1 /* UIColor+MobileOrg.swift */; };
 		54CD6303234BC9A200D485E1 /* RoundedLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54CD6302234BC9A200D485E1 /* RoundedLabel.swift */; };
 		54E9BAA923531E12008419C4 /* String+Attributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54E9BAA823531E12008419C4 /* String+Attributes.swift */; };
@@ -164,6 +165,7 @@
 		5454325B235E5B0300A46A84 /* ORGTags.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ORGTags.swift; sourceTree = "<group>"; };
 		5454325D235E5B3300A46A84 /* ORGDocument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ORGDocument.swift; sourceTree = "<group>"; };
 		5454325F235E5B5600A46A84 /* String+ORGParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+ORGParser.swift"; sourceTree = "<group>"; };
+		54543262235E5CD800A46A84 /* ORGKeywordTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ORGKeywordTests.swift; sourceTree = "<group>"; };
 		54CD6300234BC02D00D485E1 /* UIColor+MobileOrg.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+MobileOrg.swift"; sourceTree = "<group>"; };
 		54CD6302234BC9A200D485E1 /* RoundedLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedLabel.swift; sourceTree = "<group>"; };
 		54E9BAA823531E12008419C4 /* String+Attributes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Attributes.swift"; sourceTree = "<group>"; };
@@ -471,6 +473,14 @@
 			path = Elements;
 			sourceTree = "<group>";
 		};
+		54543261235E5BFB00A46A84 /* Parser */ = {
+			isa = PBXGroup;
+			children = (
+				54543262235E5CD800A46A84 /* ORGKeywordTests.swift */,
+			);
+			path = Parser;
+			sourceTree = "<group>";
+		};
 		54E9BA9F23523ED6008419C4 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
@@ -490,6 +500,7 @@
 		747BF9981DFD719400E800FB /* MobileOrgTests */ = {
 			isa = PBXGroup;
 			children = (
+				54543261235E5BFB00A46A84 /* Parser */,
 				5420E7CE234FC7590008ADAC /* Sync */,
 				749CCE7D1E08557800DE4648 /* Resources */,
 				747BF9A21DFD738E00E800FB /* NodeTests.m */,
@@ -1084,6 +1095,7 @@
 				5420E7D1234FC7AA0008ADAC /* CloudTransferManagerTests.swift in Sources */,
 				749CCE7C1E084F6A00DE4648 /* OrgfileParserTests.swift in Sources */,
 				7476CA9F1E01C749007EAE6F /* String+RegexTests.swift in Sources */,
+				54543263235E5CD800A46A84 /* ORGKeywordTests.swift in Sources */,
 				7419FA541E20DACA00F0EA45 /* SettingsTest.swift in Sources */,
 				747BF9A31DFD738E00E800FB /* NodeTests.m in Sources */,
 				744787E01EB265A700631BA2 /* WebDavTests.swift in Sources */,

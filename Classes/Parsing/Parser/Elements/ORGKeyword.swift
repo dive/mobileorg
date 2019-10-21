@@ -38,7 +38,7 @@ import Foundation
 
 final class ORGKeyword: ORGElement {
     var originalString: String
-    static var regex: String = ###"#\+{1}((?:\w)+(?:\[\w+\])?)?: (.*)+"###
+    static var regex: String = ###"#\+{1}((?:\w)+(?:\[\w+\])?)?: (.*)"###
     var description: String { return "KEYWORD: \(self.key ?? "Empty") : \(self.value ?? "Empty")" }
 
     var key: String?
@@ -59,8 +59,6 @@ final class ORGKeyword: ORGElement {
             guard let range = Range(match.range(at: 2), in: self.originalString) else { return nil }
             return String(self.originalString[range])
         }()
-        print(self)
     }
 
 }
-
