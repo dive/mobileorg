@@ -19,6 +19,13 @@
 		5420E7C9234D15F20008ADAC /* CloudTransferManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5420E7C8234D15F20008ADAC /* CloudTransferManager.swift */; };
 		5420E7CD234FB4150008ADAC /* UIAlertController+MobileOrg.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5420E7CC234FB4150008ADAC /* UIAlertController+MobileOrg.swift */; };
 		5420E7D1234FC7AA0008ADAC /* CloudTransferManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5420E7D0234FC7AA0008ADAC /* CloudTransferManagerTests.swift */; };
+		54543253235E5A6300A46A84 /* ORGParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54543252235E5A6300A46A84 /* ORGParser.swift */; };
+		54543256235E5AB300A46A84 /* ORGElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54543255235E5AB300A46A84 /* ORGElement.swift */; };
+		54543258235E5AD100A46A84 /* ORGHeadling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54543257235E5AD100A46A84 /* ORGHeadling.swift */; };
+		5454325A235E5AE900A46A84 /* ORGKeyword.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54543259235E5AE900A46A84 /* ORGKeyword.swift */; };
+		5454325C235E5B0300A46A84 /* ORGTags.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5454325B235E5B0300A46A84 /* ORGTags.swift */; };
+		5454325E235E5B3300A46A84 /* ORGDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5454325D235E5B3300A46A84 /* ORGDocument.swift */; };
+		54543260235E5B5600A46A84 /* String+ORGParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5454325F235E5B5600A46A84 /* String+ORGParser.swift */; };
 		54CD6301234BC02D00D485E1 /* UIColor+MobileOrg.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54CD6300234BC02D00D485E1 /* UIColor+MobileOrg.swift */; };
 		54CD6303234BC9A200D485E1 /* RoundedLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54CD6302234BC9A200D485E1 /* RoundedLabel.swift */; };
 		54E9BAA923531E12008419C4 /* String+Attributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54E9BAA823531E12008419C4 /* String+Attributes.swift */; };
@@ -150,6 +157,13 @@
 		5420E7C8234D15F20008ADAC /* CloudTransferManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudTransferManager.swift; sourceTree = "<group>"; };
 		5420E7CC234FB4150008ADAC /* UIAlertController+MobileOrg.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIAlertController+MobileOrg.swift"; sourceTree = "<group>"; };
 		5420E7D0234FC7AA0008ADAC /* CloudTransferManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudTransferManagerTests.swift; sourceTree = "<group>"; };
+		54543252235E5A6300A46A84 /* ORGParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ORGParser.swift; sourceTree = "<group>"; };
+		54543255235E5AB300A46A84 /* ORGElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ORGElement.swift; sourceTree = "<group>"; };
+		54543257235E5AD100A46A84 /* ORGHeadling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ORGHeadling.swift; sourceTree = "<group>"; };
+		54543259235E5AE900A46A84 /* ORGKeyword.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ORGKeyword.swift; sourceTree = "<group>"; };
+		5454325B235E5B0300A46A84 /* ORGTags.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ORGTags.swift; sourceTree = "<group>"; };
+		5454325D235E5B3300A46A84 /* ORGDocument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ORGDocument.swift; sourceTree = "<group>"; };
+		5454325F235E5B5600A46A84 /* String+ORGParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+ORGParser.swift"; sourceTree = "<group>"; };
 		54CD6300234BC02D00D485E1 /* UIColor+MobileOrg.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+MobileOrg.swift"; sourceTree = "<group>"; };
 		54CD6302234BC9A200D485E1 /* RoundedLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedLabel.swift; sourceTree = "<group>"; };
 		54E9BAA823531E12008419C4 /* String+Attributes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Attributes.swift"; sourceTree = "<group>"; };
@@ -435,6 +449,28 @@
 			path = iCloud;
 			sourceTree = "<group>";
 		};
+		54543251235E5A3B00A46A84 /* Parser */ = {
+			isa = PBXGroup;
+			children = (
+				54543254235E5A9B00A46A84 /* Elements */,
+				5454325D235E5B3300A46A84 /* ORGDocument.swift */,
+				54543252235E5A6300A46A84 /* ORGParser.swift */,
+				5454325F235E5B5600A46A84 /* String+ORGParser.swift */,
+			);
+			path = Parser;
+			sourceTree = "<group>";
+		};
+		54543254235E5A9B00A46A84 /* Elements */ = {
+			isa = PBXGroup;
+			children = (
+				54543255235E5AB300A46A84 /* ORGElement.swift */,
+				54543257235E5AD100A46A84 /* ORGHeadling.swift */,
+				54543259235E5AE900A46A84 /* ORGKeyword.swift */,
+				5454325B235E5B0300A46A84 /* ORGTags.swift */,
+			);
+			path = Elements;
+			sourceTree = "<group>";
+		};
 		54E9BA9F23523ED6008419C4 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
@@ -586,6 +622,7 @@
 		79BA555D1073A6F800D67917 /* Parsing */ = {
 			isa = PBXGroup;
 			children = (
+				54543251235E5A3B00A46A84 /* Parser */,
 				79CB19D01074423C00A7E065 /* ChecksumFileParser.h */,
 				79CB19D11074423C00A7E065 /* ChecksumFileParser.m */,
 				79CB19D31074424300A7E065 /* OrgFileParser.h */,
@@ -998,6 +1035,7 @@
 				79CB1821107425EF00A7E065 /* TransferContext.m in Sources */,
 				79CB1824107425F500A7E065 /* TransferManager.m in Sources */,
 				79CB183E1074279C00A7E065 /* Settings.m in Sources */,
+				54543253235E5A6300A46A84 /* ORGParser.swift in Sources */,
 				7436ED731E41C05200BBD704 /* WebDavTransferManager.swift in Sources */,
 				79CB18BE10742C7100A7E065 /* StatusViewController.m in Sources */,
 				6CB501F11E20C3D70082FD40 /* SettingsController.swift in Sources */,
@@ -1010,8 +1048,11 @@
 				6CB501F21E20C3D70082FD40 /* SyncSettingsController.swift in Sources */,
 				79CB1F1110758EA200A7E065 /* DetailsViewController.m in Sources */,
 				79CB20B510762CC000A7E065 /* NodeTextEditController.m in Sources */,
+				5454325A235E5AE900A46A84 /* ORGKeyword.swift in Sources */,
 				791653A81078109B00695E4C /* EditsFileParser.m in Sources */,
+				54543256235E5AB300A46A84 /* ORGElement.swift in Sources */,
 				54E9BAAB2353504A008419C4 /* OutlineCell.swift in Sources */,
+				5454325E235E5B3300A46A84 /* ORGDocument.swift in Sources */,
 				54F98281235A53B800CC6122 /* NoteListViewController.swift in Sources */,
 				791653C2107814C500695E4C /* EditEntity.m in Sources */,
 				7998AC131079180F0000ED49 /* TagEditController.m in Sources */,
@@ -1019,6 +1060,7 @@
 				7998B00410797EBE0000ED49 /* TodoStateEditController.m in Sources */,
 				5420E7C9234D15F20008ADAC /* CloudTransferManager.swift in Sources */,
 				793F7D8D107C1E6000674D0A /* SearchController.m in Sources */,
+				54543258235E5AD100A46A84 /* ORGHeadling.swift in Sources */,
 				745B1E311EC98C9B00D80421 /* MobileOrg2.xcdatamodeld in Sources */,
 				793F7EE5107C362E00674D0A /* DocumentViewController.m in Sources */,
 				793F811F107D381A00674D0A /* SessionManager.m in Sources */,
@@ -1026,6 +1068,8 @@
 				790B413F10814D8400A852F1 /* ActionMenuController.m in Sources */,
 				790B417E10814FAC00A852F1 /* OutlineTableView.m in Sources */,
 				54E9BAA923531E12008419C4 /* String+Attributes.swift in Sources */,
+				54543260235E5B5600A46A84 /* String+ORGParser.swift in Sources */,
+				5454325C235E5B0300A46A84 /* ORGTags.swift in Sources */,
 				790B455610826A0900A852F1 /* PriorityEditController.m in Sources */,
 				5420E7CD234FB4150008ADAC /* UIAlertController+MobileOrg.swift in Sources */,
 				18A3BBA716178DCD003D9320 /* Reachability.m in Sources */,
