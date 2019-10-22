@@ -20,6 +20,20 @@
 //  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 //
 
+// TODO:
+// - [ ] implement Greater Blocks support;
+// - [ ] implement Drawers and Property Drawers support;
+// - [ ] implement Dynamic Blocks support;
+// - [ ] implement Footnote Definitions support;
+// - [ ] implement Inlinetasks support;
+// - [ ] implement Plain Lists and Items support;
+// - [ ] implement Property Drawers support;
+// - [ ] what to do with Tables?
+// - [ ] implement Clock, Diary Sexp and Planning support;
+// - [ ] implement Comments support;
+// - [ ] implement Fixed Width Areas support;
+// - [ ] implement Horizontal Rules support;
+
 import Foundation
 
 final class ORGParser {
