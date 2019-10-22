@@ -30,6 +30,8 @@
 		54543265235E606B00A46A84 /* ORGTagsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54543264235E606B00A46A84 /* ORGTagsTests.swift */; };
 		54CD6301234BC02D00D485E1 /* UIColor+MobileOrg.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54CD6300234BC02D00D485E1 /* UIColor+MobileOrg.swift */; };
 		54CD6303234BC9A200D485E1 /* RoundedLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54CD6302234BC9A200D485E1 /* RoundedLabel.swift */; };
+		54CE4C51235FA5CD006EDE13 /* ORGPlanning.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54CE4C50235FA5CD006EDE13 /* ORGPlanning.swift */; };
+		54CE4C53235FA6BF006EDE13 /* ORGPlanningTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54CE4C52235FA6BF006EDE13 /* ORGPlanningTests.swift */; };
 		54E9BAA923531E12008419C4 /* String+Attributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54E9BAA823531E12008419C4 /* String+Attributes.swift */; };
 		54E9BAAB2353504A008419C4 /* OutlineCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54E9BAAA2353504A008419C4 /* OutlineCell.swift */; };
 		54F9827F235A536C00CC6122 /* AddNoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54F9827E235A536C00CC6122 /* AddNoteViewController.swift */; };
@@ -170,6 +172,8 @@
 		54543264235E606B00A46A84 /* ORGTagsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ORGTagsTests.swift; sourceTree = "<group>"; };
 		54CD6300234BC02D00D485E1 /* UIColor+MobileOrg.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+MobileOrg.swift"; sourceTree = "<group>"; };
 		54CD6302234BC9A200D485E1 /* RoundedLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedLabel.swift; sourceTree = "<group>"; };
+		54CE4C50235FA5CD006EDE13 /* ORGPlanning.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ORGPlanning.swift; sourceTree = "<group>"; };
+		54CE4C52235FA6BF006EDE13 /* ORGPlanningTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ORGPlanningTests.swift; path = Classes/Parsing/Parser/Elements/ORGPlanningTests.swift; sourceTree = SOURCE_ROOT; };
 		54E9BAA823531E12008419C4 /* String+Attributes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Attributes.swift"; sourceTree = "<group>"; };
 		54E9BAAA2353504A008419C4 /* OutlineCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutlineCell.swift; sourceTree = "<group>"; };
 		54F9827E235A536C00CC6122 /* AddNoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNoteViewController.swift; sourceTree = "<group>"; };
@@ -471,6 +475,7 @@
 				54543257235E5AD100A46A84 /* ORGHeadling.swift */,
 				54543259235E5AE900A46A84 /* ORGKeyword.swift */,
 				5454325B235E5B0300A46A84 /* ORGTags.swift */,
+				54CE4C50235FA5CD006EDE13 /* ORGPlanning.swift */,
 			);
 			path = Elements;
 			sourceTree = "<group>";
@@ -478,6 +483,7 @@
 		54543261235E5BFB00A46A84 /* Parser */ = {
 			isa = PBXGroup;
 			children = (
+				54CE4C52235FA6BF006EDE13 /* ORGPlanningTests.swift */,
 				54543262235E5CD800A46A84 /* ORGKeywordTests.swift */,
 				54543264235E606B00A46A84 /* ORGTagsTests.swift */,
 			);
@@ -1037,6 +1043,7 @@
 				1D60589B0D05DD56006BFB54 /* main.m in Sources */,
 				79BA55621073A6F800D67917 /* MobileOrgAppDelegate.m in Sources */,
 				7982F3621073F2FA00AEA6BC /* Node.m in Sources */,
+				54CE4C51235FA5CD006EDE13 /* ORGPlanning.swift in Sources */,
 				7982F3631073F2FA00AEA6BC /* Note.m in Sources */,
 				744408DE1E035A1800BCE192 /* DropboxTransferManager.swift in Sources */,
 				7982F3641073F2FA00AEA6BC /* FileChecksum.m in Sources */,
@@ -1095,6 +1102,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				54CE4C53235FA6BF006EDE13 /* ORGPlanningTests.swift in Sources */,
 				5420E7D1234FC7AA0008ADAC /* CloudTransferManagerTests.swift in Sources */,
 				749CCE7C1E084F6A00DE4648 /* OrgfileParserTests.swift in Sources */,
 				7476CA9F1E01C749007EAE6F /* String+RegexTests.swift in Sources */,
