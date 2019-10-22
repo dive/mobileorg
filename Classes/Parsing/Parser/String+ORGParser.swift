@@ -23,7 +23,7 @@
 import Foundation
 
 extension String {
-    // FIXME: switch to the token based interator
+    // FIXME: switch to the token based iterator
     var orgType: ORGElementType {
         if ORGHeadline.match(string: self) { return .headline }
         else if ORGKeyword.match(string: self) { return .keyword }

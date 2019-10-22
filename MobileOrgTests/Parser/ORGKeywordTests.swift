@@ -3,7 +3,7 @@
 //  MobileOrgTests
 //
 //  Created by Artem Loenko on 21/10/2019.
-//  Copyright © 2019 Sean Escriva. All rights reserved.
+//  Copyright © 2019 Artem Loenko.
 //
 
 import XCTest
