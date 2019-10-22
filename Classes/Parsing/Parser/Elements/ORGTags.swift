@@ -24,7 +24,7 @@ import Foundation
 
 class ORGTags: ORGElement {
     let originalString: String
-    static var regex: String = ###"(:([@\w\.]+:)+)$"###
+    static var regex: String = ###"\s(:(?:[@\w\.]+:)+)$"###
     var description: String { return "TAGS: \(tags?.joined(separator: "|") ?? "no tags")" }
 
     private(set) var tagsRange: Range<String.Index>?
