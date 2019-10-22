@@ -39,7 +39,7 @@ class ORGTags: ORGElement {
     private func parse() {
         guard let match = self.matches?.first else { fatalError("Cannot extract a match from the regex.") }
         self.tags = {
-            guard let range = Range(match.range, in: self.originalString) else { return nil }
+            guard let range = Range(match.range(at: 1), in: self.originalString) else { return nil }
             self.tagsRange = range
             return String(self.originalString[range]).split(separator: ":").map { String($0) }
         }()

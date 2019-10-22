@@ -7,27 +7,32 @@
 //
 
 import XCTest
+@testable import MobileOrg
 
 class ORGTagsTests: XCTestCase {
 
-    override func setUp() {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+    func test_thatMatchWorksForCorrectKeywords() {
+        let tags = ["TITLE :one:two:three:",
+                    "TITLE :one:@two:three:FOUR:five:",
+                    "TITLE :@one:@two:",
+                    "TITLE :one:",
+                    "TITLE :@one:",
+                    "TITLE :with_underscore:"]
+        tags.forEach { XCTAssertTrue(ORGTags.match(string: $0)) }
     }
 
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+    func test_thatMatchIgnoresInCorrectOrVerySimilarKeywords() {
+        let tags = ["TITLE one:two",
+                    "TITLE :one:two",
+                    "TITLE one:two:",
+                    "TITLE @one:@two@"]
+        tags.forEach { XCTAssertFalse(ORGTags.match(string: $0), "\($0) is incorrect tags set and has to fail.") }
     }
 
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
+    func test_thatTagsParsedCorrectly() {
+        let tags = ["one", "two", "three", "@four", "five_six"]
+        let sut = ORGTags(string: "TITLE :\(tags.joined(separator: ":")):")
+        XCTAssertEqual(sut.tags, tags)
     }
 
 }
