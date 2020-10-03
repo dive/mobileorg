@@ -31,20 +31,15 @@ final class CloudTransferManager: NSObject {
     private var activeTransfer: TransferContext? = nil
     private var paused = false
     private var active = false
-    private let cloudSynchronizationQueue = DispatchQueue(label: "mobileorg.cloudSynchronizationQueue", qos: .background)
+    private let cloudSynchronizationQueue = DispatchQueue(label: "mobileorg.cloudSynchronizationQueue", qos: .userInitiated) // Serial by default
 
     override init() {
         super.init()
         self.obtainContainer() { [weak self] (success) in
-            guard let self = self else { return }
             if success {
-                NotificationCenter.default.addObserver(self, selector: #selector(self.askCloudStorageToSynchronizeDocuments), name: UIApplication.didBecomeActiveNotification, object: nil)
+                self?.askCloudStorageToSynchronizeDocuments()
             }
         }
-    }
-
-    deinit {
-        NotificationCenter.default.removeObserver(self, name: UIApplication.didBecomeActiveNotification, object: nil)
     }
 
     @objc var isAvailable: Bool {
