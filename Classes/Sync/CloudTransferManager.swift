@@ -57,7 +57,7 @@ final class CloudTransferManager: NSObject {
     // We populate it in the init but the execution is asynchronous, can be nil if you are too fast
     private var containerURL: URL?
 
-    // This function is called during the initalization of the class
+    // This function is called during the initialisation of the class
     // No fatalErrors here, please, or it will be impossible to run an application to access the data
     private func obtainContainer(completion: @escaping (Bool) -> Void) {
         guard self.containerURL == nil else {
