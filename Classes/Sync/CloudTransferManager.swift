@@ -87,13 +87,23 @@ final class CloudTransferManager: NSObject {
         }
     }
 
-    @objc private func askCloudStorageToSynchronizeDocuments() {
+    private func askCloudStorageToSynchronizeDocuments() {
         guard let documentURL = self.containerURL else { return }
         self.cloudSynchronizationQueue.async {
             do {
-                // If a cloud-based file or directory has not been downloaded yet, calling this method starts the download process.
-                // If the item exists locally, calling this method synchronizes the local copy with the version in the cloud.
-                try FileManager.default.startDownloadingUbiquitousItem(at: documentURL)
+                let requiredProperties: Set<URLResourceKey> = [ .isUbiquitousItemKey, .ubiquitousItemDownloadingStatusKey ]
+                let enumerator = FileManager.default.enumerator(at: documentURL, includingPropertiesForKeys: [])
+                while let fileURL = enumerator?.nextObject() as? URL {
+                    // Sometimes, macOS creates .Trash directory, skip such files
+                    guard !fileURL.path.contains(".Trash") else { continue }
+                    let resourceOptions = try fileURL.resourceValues(forKeys: requiredProperties)
+                    guard resourceOptions.isUbiquitousItem ?? false, resourceOptions.ubiquitousItemDownloadingStatus == .notDownloaded else {
+                        continue
+                    }
+                    // If a cloud-based file or directory has not been downloaded yet, calling this method starts the download process.
+                    // If the item exists locally, calling this method synchronises the local copy with the version in the cloud.
+                    try FileManager.default.startDownloadingUbiquitousItem(at: fileURL)
+                }
             } catch {
                 DispatchQueue.main.async {
                     UIAlertController.show("iCloud Synchronisation Error", message: error.localizedDescription)
@@ -114,7 +124,7 @@ final class CloudTransferManager: NSObject {
         let activeTransfer = transfers.removeFirst()
         activeTransfer.success = true
         syncManager.transferFilename = activeTransfer.remoteUrl.lastPathComponent
-        syncManager.progressTotal = 0
+        syncManager.progressTotal = 100
         syncManager.updateStatus()
         self.active = true
         self.processRequest(activeTransfer)
