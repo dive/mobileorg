@@ -1,0 +1,21 @@
+name: CI
+
+on:
+  push:
+    branches: [ develop ]
+  pull_request:
+    branches: [ develop ]
+
+jobs:
+  test:
+    runs-on: macos-latest
+    
+    strategy:
+      matrix:
+        xcode: ['/Applications/Xcode_12.app']
+        destination: ['platform=iOS Simulator,OS=14,name=iPhone 8']
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Build & Test
+        run: xcodebuild clean test -scheme MobileOrg -destination "${destination}"
